@@ -25,12 +25,12 @@ public class Appointment {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "doctor_id", nullable = false)
-    @JsonBackReference
+    @JsonBackReference("doctor-appointments")
     private Doctor doctor;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "patient_id")
-    @JsonBackReference
+    @JsonBackReference("patient-appointments")
     private Patient patient;
 
     @Column(nullable = false)
